@@ -21,6 +21,14 @@ volatile unsigned int counter = 0;  //This variable will increase or decrease de
 
 void setup() {
   Serial.begin (9600);
+ 
+  pinMode(2, INPUT);           // set pin to input
+  pinMode(3, INPUT);           // set pin to input
+  
+  digitalWrite(2, HIGH);       // turn on pullup resistors
+  digitalWrite(3, HIGH);       // turn on pullup resistors
+ 
+ 
   //Setting up interrupt
   //A rising pulse from encodenren activated ai0(). AttachInterrupt 0 is DigitalPin nr 2 on moust Arduino.
   attachInterrupt(0, ai0, RISING);
